@@ -12,7 +12,12 @@ class Buscador extends Component {
                         <input type="text" className="form-control for-control-lg" 
                         placeholder="Busca tu Imagen. Ejemplo: Furbol"></input>
                     </div>
+                    <div className="form-group col-md-4">
+                        <input type="submit" className="btn btn-lg btn-danger btn-block"
+                        placeholder="Busca tu Imagen"></input>
+                    </div>
                 </div>
+               
             </form>
         );
     }
