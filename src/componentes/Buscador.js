@@ -6,7 +6,10 @@ class Buscador extends Component {
     /* Este metodo permite obtener los datos del componente impreso desde app.js */
     obtenerDatos = (e) => {
         e.preventDefault();
-        console.log(this.busquedaRef.current.value);
+        //Se toma el valor del input
+        const termino = this.busquedaRef.current.value;
+        //Se envia al componente principal datosBusqueda
+        this.props.datosBusqueda(termino);
     }
 
     render() {
