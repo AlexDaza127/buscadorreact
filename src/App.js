@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Buscador from './componentes/Buscador';
-
+import Resultado from './componentes/Resultado';
 
 class App extends Component {
 
@@ -39,10 +39,12 @@ consultarApi = () => {
         <div className="jumbotron">
           <p className="lead text-center">Buscador de imagenes</p>
           {/*Utilizando el componente Buscador para lanzarlo en la aplicación*/}
-          <Buscador datosBusqueda={this.datosBusqueda}>
-           
-          </Buscador>
+          <Buscador datosBusqueda={this.datosBusqueda}></Buscador>
+
         </div>
+        <Resultado 
+        imagenes={this.state.imagenes}
+        ></Resultado>
       </div>
     );
   }
