@@ -5,14 +5,20 @@ import Buscador from './componentes/Buscador';
 class App extends Component {
 
 state = {
-  termino : 'Desarrollo'
+  termino : '',
+  imagenes : []
 
 }
 
 //se utiliza un fetch api con la url de la api de pixabay
 consultarApi = () => {
-  const url = 'https://pixabay.com/api/?key=1732750-d45b5378879d1e877cd1d35a6&q=${this.state.termino}';
-  console.log(url);
+  const url = 'https://pixabay.com/api/?key=1732750-d45b5378879d1e877cd1d35a6&q=${'+this.state.termino+'}&per_page=30';
+  
+  
+  fetch(url)
+    .then(respuesta => respuesta.json())
+    .then(resultado => this.setState({imagenes : resultado.hits}))
+  
 }
 
   //metodo que recibe el parametro recibido del input
@@ -20,6 +26,9 @@ consultarApi = () => {
     //se imprime lo recibido en la consola
     this.setState({
       termino
+    }, () =>{
+      //ejecutar la funcion de la api 
+      this.consultarApi();
     })
   }
 
@@ -34,7 +43,6 @@ consultarApi = () => {
            
           </Buscador>
         </div>
-        {this.state.termino}
       </div>
     );
   }
