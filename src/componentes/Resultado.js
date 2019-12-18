@@ -1,13 +1,26 @@
 //se crea el nuevo componente en donde se imprimira el resultado de la busqueda
 import React, { Component } from 'react';
 import App from '../App';
-
+import Imagen from './Imagen';
 
 //se traen las propiedades de App.js 
 class Resultado extends Component {
 
     mostrarImagenes = () =>{
-        console.log(this.props.mostrarImagenes);
+        const imagenes = this.props.imagenes;
+
+        if(imagenes.length === 0) return null;
+
+        console.log(imagenes);
+        return(
+            <React.Fragment>
+                <div className="col-12 p-5 row">
+                    {imagenes.map(imagen =>(
+                        <img></img>
+                    ))}
+                </div>
+            </React.Fragment>
+        )
     }
 
     render() { 

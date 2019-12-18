@@ -14,7 +14,7 @@ state = {
 consultarApi = () => {
   const url = 'https://pixabay.com/api/?key=1732750-d45b5378879d1e877cd1d35a6&q=${'+this.state.termino+'}&per_page=30';
   
-  
+  // toda respuesta se guarda en un json 
   fetch(url)
     .then(respuesta => respuesta.json())
     .then(resultado => this.setState({imagenes : resultado.hits}))
@@ -39,12 +39,15 @@ consultarApi = () => {
         <div className="jumbotron">
           <p className="lead text-center">Buscador de imagenes</p>
           {/*Utilizando el componente Buscador para lanzarlo en la aplicación*/}
-          <Buscador datosBusqueda={this.datosBusqueda}></Buscador>
+          <Buscador 
+          datosBusqueda={this.datosBusqueda}>
 
+          </Buscador>
         </div>
         <Resultado 
-        imagenes={this.state.imagenes}
-        ></Resultado>
+        imagenes={this.state.imagenes}>
+
+        </Resultado>
       </div>
     );
   }
