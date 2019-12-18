@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import App from '../App';
 import Imagen from './Imagen';
+import Paginacion from './Paginacion';
 
 //se traen las propiedades de App.js 
 class Resultado extends Component {
@@ -25,6 +26,10 @@ class Resultado extends Component {
                         </Imagen>
                     ))}
                 </div>
+                <Paginacion
+                paginacAnterior={this.props.paginacAnterior}
+                paginacSiguiente={this.props.paginacSiguiente}
+                ></Paginacion>
             </React.Fragment>
         )
     }
