@@ -15,6 +15,10 @@ class Resultado extends Component {
         console.log(imagenes);
         return(
             <React.Fragment>
+                <Paginacion
+                paginaAnterior={this.props.paginaAnterior}
+                paginaSiguiente={this.props.paginaSiguiente}
+                ></Paginacion>
                 <div className="col-12 p-5 row">
                     {imagenes.map(imagen =>(
                         //se llama al componente Imagen para imprimir lo que contiene
@@ -27,8 +31,8 @@ class Resultado extends Component {
                     ))}
                 </div>
                 <Paginacion
-                paginacAnterior={this.props.paginacAnterior}
-                paginacSiguiente={this.props.paginacSiguiente}
+                paginaAnterior={this.props.paginaAnterior}
+                paginaSiguiente={this.props.paginaSiguiente}
                 ></Paginacion>
             </React.Fragment>
         )
