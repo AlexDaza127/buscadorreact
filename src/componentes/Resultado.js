@@ -17,7 +17,12 @@ class Resultado extends Component {
                 <div className="col-12 p-5 row">
                     {imagenes.map(imagen =>(
                         //se llama al componente Imagen para imprimir lo que contiene
-                        <Imagen></Imagen>
+                        <Imagen
+                         key={imagen.id}
+                         imagen={imagen}
+                        >
+
+                        </Imagen>
                     ))}
                 </div>
             </React.Fragment>
